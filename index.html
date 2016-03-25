@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Snapdrop by yougrow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Snapdrop</h1>
+      <h2 class="project-tagline">A HTML5 clone of Apple&#39;s AirDrop</h2>
+      <a href="https://github.com/yougrow/snapdrop" class="btn">View on GitHub</a>
+      <a href="https://github.com/yougrow/snapdrop/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/yougrow/snapdrop/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="snapdrop" class="anchor" href="#snapdrop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Snapdrop</h1>
+
+<p><a href="https://snapdrop.net">Snapdrop</a> is inspired by Apple's Airdrop, but is a Progressive Web App built with Polymer and Web RTC.</p>
+
+<h4>
+<a id="snapdrop-is-built-with-the-following-awesome-technologies" class="anchor" href="#snapdrop-is-built-with-the-following-awesome-technologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Snapdrop is built with the following awesome technologies:</h4>
+
+<ul>
+<li>
+<a href="https://www.polymer-project.org">Polymer</a>
+
+<ul>
+<li><a href="https://developers.google.com/web/tools/polymer-starter-kit/">Polymer Starter Kit</a></li>
+<li><a href="https://elements.polymer-project.org/browse">Polymer Elements</a></li>
+</ul>
+</li>
+<li>
+<a href="http://webrtc.org/">WebRTC</a>
+
+<ul>
+<li><a href="http://peerjs.com">PeerJS</a></li>
+</ul>
+</li>
+<li>
+<a href="http://www.websocket.org/">WebSockets</a> fallback (iDevices don't support WebRTC)
+
+<ul>
+<li><a href="http://binaryjs.com/">BinaryJs</a></li>
+</ul>
+</li>
+<li><a href="https://nodejs.org/en/">NodeJS</a></li>
+<li><a href="http://www.google.com/design/spec/material-design/introduction.html">Material Design</a></li>
+</ul>
+
+<h3>
+<a id="frequently-asked-questions" class="anchor" href="#frequently-asked-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Frequently Asked Questions</h3>
+
+<h3>
+<a id="instructions" class="anchor" href="#instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructions</h3>
+
+<ul>
+<li>
+<a href="https://www.youtube.com/watch?v=4XN02GkcHUM">Video Instructions</a> (Big thanks to <a href="https://www.youtube.com/channel/UC_DUzWMb8gZZnAbISQjmAfQ">TheiTeckHq</a>)</li>
+<li><a href="http://www.idownloadblog.com/2015/12/29/snapdrop/">idownloadblog</a></li>
+<li><a href="http://thenextweb.com/insider/2015/12/27/snapdrop-is-a-handy-web-based-replacement-for-apples-fiddly-airdrop-file-transfer-tool/">thenextweb</a></li>
+<li><a href="http://www.winboard.org/artikel-ratgeber/6253-dateien-vom-desktop-pc-mit-anderen-plattformen-teilen-mit-snapdrop.html">winboard</a></li>
+<li><a href="https://free.com.tw/snapdrop/?utm_content=buffere6987&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">免費資源網路社群</a></li>
+</ul>
+
+<h5>
+<a id="what-about-the-connection-is-it-a-p2p-connection-directly-from-device-to-device-or-is-there-any-third-party-server" class="anchor" href="#what-about-the-connection-is-it-a-p2p-connection-directly-from-device-to-device-or-is-there-any-third-party-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What about the connection? Is it a P2P-connection directly from device to device or is there any third-party-server?</h5>
+
+<p>It uses a P2P connection if WebRTC is supported by the browser. (WebRTC needs a Signaling Server, but it is only used to establish a connection and is not involved in the file transfer).</p>
+
+<p>If WebRTC isn’t supported (Safari, IE) it uses a Web Sockets fallback for the file transfer. The server connects the clients with a stream.  </p>
+
+<h5>
+<a id="what-about-privacy-will-files-be-saved-on-third-party-servers" class="anchor" href="#what-about-privacy-will-files-be-saved-on-third-party-servers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What about privacy? Will files be saved on third-party-servers?</h5>
+
+<p>None of your files are ever saved on any server. 
+Snapdrop doesn't even use cookies or a database. If you are curious have a look <a href="https://github.com/capira12/snapdrop/blob/master/server/ws-server.js">at the Server</a>
+But it does use Google Analytics. </p>
+
+<h5>
+<a id="is-snapdrop-a-fork-of-sharedrop" class="anchor" href="#is-snapdrop-a-fork-of-sharedrop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Is SnapDrop a fork of ShareDrop?</h5>
+
+<p>No. ShareDrop is built with ember. Snapdrop is built with Polymer. 
+I wanted to play around with Progressive Web Apps and then I got the idea to clone Apple’s Airdrop. By doing research on this idea I found and analysed ShareDrop. I liked it and thought about how to improve it.
+ShareDrop uses WebRTC only and isn't compatible with Safari Browsers. Snapdrop uses a Websocket fallback and some hacks to make Snapdrop work due to the download restrictions on iDevices. </p>
+
+<h3>
+<a id="snapdrop-is-awesome-how-can-i-support-it" class="anchor" href="#snapdrop-is-awesome-how-can-i-support-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Snapdrop is awesome! How can I support it?</h3>
+
+<ul>
+<li>File Bugs, Give Feedback, Suggestions</li>
+<li>Share Snapdrop on your social media.</li>
+<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=R9C5E42UYEQCN">Buy me a cup of coffee</a></li>
+<li>Fix bugs and do a Pull Request. This is my first open source project, so I am not very used to the common workflow, but we'll figure it out!</li>
+<li>Do Security Analysis and suggestions</li>
+</ul>
+
+<h2>
+<a id="run-the-project-on-your-device" class="anchor" href="#run-the-project-on-your-device" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run the project on your device</h2>
+
+<ul>
+<li>Install npm, bower, gulp and the dependencies as described <a href="https://github.com/PolymerElements/polymer-starter-kit#install-dependencies">here</a>
+
+<ul>
+<li><code>npm install &amp; bower install</code></li>
+</ul>
+</li>
+<li>run <code>gulp serve</code>
+</li>
+<li>In a second shell run <code>node index.js</code>
+</li>
+</ul>
+
+<h2>
+<a id="licences" class="anchor" href="#licences" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licences</h2>
+
+<ul>
+<li>Thanks to <a href="">Mark DiAngelo</a> for the <a href="http://soundbible.com/2067-Blop.html">Blop Sound</a>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/yougrow/snapdrop">Snapdrop</a> is maintained by <a href="https://github.com/yougrow">yougrow</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
